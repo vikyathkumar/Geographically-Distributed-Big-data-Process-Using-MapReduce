@@ -1,0 +1,26 @@
+jps
+start-all.sh
+jps
+hadoop fs -mkdir /geographic    -----------------------We are creating directory with the name
+hadoop fs -put /home/user/Desktop/geographic/Project/geographic.csv /geographic     ------------We are fetching the data set into the directory.
+hadoop fs -ls /geographic   -------------------Function are applying
+cd /home/user/Desktop/geographic/Project
+hadoop jar Project.jar Project /geographic/geographic.csv /geographic/output
+
+cd /var/www/html
+chmod -R 775 -location
+
+
+
+hive
+
+CREATE TABLE geographic (countryname string, indicatorname string, countrycode string, attribute string) 
+row format delimited fields terminated by ',';
+LOAD DATA LOCAL INPATH '/home/user/Desktop/geographic/geographic.csv' OVERWRITE INTO TABLE geographic;
+select countryname, indicatorname from geographic where countrycode = '1 to 20';
+select countryname,countrycode, indicatorname from geographic where attribute = '0 to 20';
+SELECT countryname FROM geographic year LIMIT 10;
+SELECT countryname, indicatorname FROM geographic attribute LIMIT 5;
+ 
+DROP TABLE IF EXISTS geographic; 
+exit;  
