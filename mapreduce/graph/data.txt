@@ -1,0 +1,11 @@
+DAG and finds a distributed physical plan	
+0	25
+1 	15
+2	63
+3	96
+
+Threshlode
+0	0.5
+1 	0.5
+2	0.5
+3	0.5
